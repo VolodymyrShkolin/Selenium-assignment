@@ -1,6 +1,7 @@
 package com.connect_group.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,6 +15,8 @@ import java.util.function.Function;
 public class BasePage {
   protected WebDriver driver;
   private WebDriverWait wait;
+  protected Actions act;
+
 
   private static final int TIMEOUT = 10;
   private static final int POLLING = 100;
@@ -25,6 +28,7 @@ public class BasePage {
     wait = new WebDriverWait(driver, TIMEOUT, POLLING);
 
     PageFactory.initElements(driver, this);
+    act = new Actions(getDriver());
   }
 
   protected WebDriver getDriver() {

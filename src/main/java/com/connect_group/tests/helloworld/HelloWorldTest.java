@@ -18,7 +18,7 @@ class HelloWorldTest extends BaseTest {
   void navigateToURL() {
     signUpPage = new SignUpPage(driver);
     receiptPage = new ReceiptPage(driver);
-    open("https://www.kimschiller.com/page-object-pattern-tutorial/index.html");
+    open("http://www.kimschiller.com/page-object-pattern-tutorial/index.html");
   }
 
   @Test
