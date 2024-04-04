@@ -25,7 +25,6 @@ class FinanceCalculatorTest extends BaseTest {
     personalisedQuotePage = new PersonalisedQuotePage(driver);
 
     open("https://www.landrover.co.uk/offers-and-finance/finance-calculator.html");
-    modelSelectPage.cookieManagement();
   }
 
 
@@ -35,11 +34,12 @@ class FinanceCalculatorTest extends BaseTest {
   @Test
   void task1(){
     //There are currently 7 signs on the site.
-    Assertions.assertEquals(8, modelSelectPage.getAllNameplatesContainer().size());
+    Assertions.assertEquals(7, modelSelectPage.getAllNameplatesContainer().size());
   }
 
   @Test
   void task2(){
+    modelSelectPage.cookieManagement();
     assertTrue(modelSelectPage.monthlyPaymentBtnIsInit());
     modelSelectPage.monthlyPaymentBtn.click();
     modelSelectPage.monthPaymentScrollTo(750);
